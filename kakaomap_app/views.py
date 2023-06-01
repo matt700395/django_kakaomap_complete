@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+def index(request):
+
+    return render(request, 'kakaomap_app/index.html')
+
 def json(request):
 
     json_data = {
@@ -16,6 +20,8 @@ def json(request):
 
     return render(request, 'kakaomap_app/json.html', {'json_data':json_data})
 
-def index(request):
 
-    return render(request, 'kakaomap_app/index.html')
+
+def kakaomap_1st(request):
+
+    return render(request, 'kakaomap_app/kakaomap_1st.html')
