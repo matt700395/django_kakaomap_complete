@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,17 @@
     <div id="map" style="width:500px;height:400px;"></div>
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=890eb7fd7b55736becc3388f215623f7"></script>
+
+    <script>
+
+        let json_data = JSON.parse('{{ json_data|safe }}');
+
+    </script>
+
 	<script>
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(36.601659208879646, 127.29777601594054), //조치원역을 중심으로 셋팅
+			center: new kakao.maps.LatLng(json_data.map_data.coord.x, json_data.map_data.coord.y), //조치원역을 중심으로 셋팅
 			level: 5
 		};
 

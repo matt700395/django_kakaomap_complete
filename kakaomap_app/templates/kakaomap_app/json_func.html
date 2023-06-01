@@ -12,9 +12,15 @@
     
 
     <script>
-        let data = '{{ json_data }}';
-        console.log(data);
-        document.write(data);
+        let data = "{{ json_data }}";
+
+        function replaceSingleQuotes(jsonString) {
+        return jsonString.replace(/'/g, '"');
+        }
+
+        let replace_data = replaceSingleQuotes(data)
+        console.log(replace_data);
+        document.write(replace_data);
     </script>
 </body>
 </html>
